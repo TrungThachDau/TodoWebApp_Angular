@@ -1,0 +1,18 @@
+<!-- src/app/components/add-todo/add-todo.component.html -->
+<!-- File: src/app/components/add-todo.component.html -->
+
+<form (ngSubmit)="addTodo()">
+  <div>
+    <label for="id">Id:</label>
+    <input class="form-control" type="text" id="id" [(ngModel)]="todo.id" name="id" required>
+  </div>
+  <div>
+    <label for="body">Tên:</label>
+    <textarea class="form-control" id="title" [(ngModel)]="todo.title" name="title"></textarea>
+  </div>
+  <div>
+    <label for="body">Mô tả:</label>
+    <textarea class="form-control" id="body" [(ngModel)]="todo.body" name="body"></textarea>
+  </div>
+  <button class="btn btn-primary" type="submit">Add Todo</button>
+</form>
