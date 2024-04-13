@@ -1,7 +1,8 @@
+<h4>Danh sách việc cần làm</h4>
 <div class="container-fluid">
-  <form (ngSubmit)="search()">
-    <input name="searchTerm" type="text" [(ngModel)]="searchTerm" placeholder="Search todos">
-    <button type="submit">Search</button>
+  <form (ngSubmit)="search()" class="d-flex">
+    <input style="width: 300px;" class="form-control me-1" name="searchTerm" type="text" [(ngModel)]="searchTerm" placeholder="Tìm việc cần làm">
+    <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
   <!-- Your existing template, but use filteredTodos instead of todos -->
   
@@ -12,7 +13,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Tên</th>
-      <th scope="col">Mô tả</th>
+      
       <th scope="col">Thời gian</th>
       <th scope="col">Trạng thái</th>
     </tr>
@@ -21,10 +22,10 @@
     <tr *ngFor="let todo of todos">
       <th scope="row">{{todo.id}}</th>
       <td>{{todo.title}}</td>
-      <td>{{todo.body}}</td>
-      <td></td>
+      
+      <td>{{todo.time | date:'dd.MM.yyyy HH:mm'}}</td>
       <td>
-        <input type="checkbox">
+        <input type="checkbox" [checked]="todo.status">
       </td>
       <td>
         <button type="button" class="btn btn-primary"[routerLink]="['/edit', todo.id]">Sửa</button>

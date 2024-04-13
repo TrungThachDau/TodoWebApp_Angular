@@ -23,7 +23,7 @@ export class AddTodoComponent {
         this.router.navigate(['/todo-list']);
       },
       (error) => {
-        this.errorMessage = 'Failed to add todo.';
+        this.errorMessage = 'Lỗi khi thêm.';
         console.error(error);
       }
     );

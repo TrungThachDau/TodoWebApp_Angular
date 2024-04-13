@@ -16,7 +16,9 @@ export class EditTodoComponent implements OnInit{
   todo: Todo = {
     id: 0,
     title: 'adsa',
-    body: 'dsad' 
+    body: 'dsad',
+    time: new Date(),
+    status: 0 
   };
   constructor(private todoService: TodoService, private route: ActivatedRoute, private router: Router) { }
   ngOnInit(): void {

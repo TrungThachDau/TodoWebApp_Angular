@@ -1,7 +1,7 @@
 <form (ngSubmit)="submit()">
     <div>
       <label for="id">Id:</label>
-    <input class="form-control" type="text" [(ngModel)]="todo.id" id="id" name="id" required>
+    <input class="form-control" type="hidden" [(ngModel)]="todo.id" id="id" name="id" required>
     </div>
     <div>
       <label for="body">Tên:</label>
@@ -11,5 +11,14 @@
       <label for="body">Mô tả:</label>
       <textarea class="form-control" id="body" [(ngModel)]="todo.body" name="body"></textarea>
     </div>
-    <button class="btn btn-primary" type="submit">Add Todo</button>
+    <div>
+      <label for="time">Thời gian:</label>
+      <input class="form-control" type="datetime-local" id="time" [(ngModel)]="todo.time" name="time">
+    </div>
+    <div>
+      <label for="status">Trạng thái:  </label>
+      <input class="form-check-input" type="checkbox" id="status" [(ngModel)]="todo.status" name="status">
+    </div>
+    <br/>
+    <button class="btn btn-primary" type="submit">Cập nhật</button>
   </form>

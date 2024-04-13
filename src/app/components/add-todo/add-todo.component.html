@@ -1,18 +1,29 @@
 <!-- src/app/components/add-todo/add-todo.component.html -->
 <!-- File: src/app/components/add-todo.component.html -->
-
+<h4>Thêm tác vụ mới</h4>
 <form (ngSubmit)="addTodo()">
   <div>
-    <label for="id">Id:</label>
-    <input class="form-control" type="text" id="id" [(ngModel)]="todo.id" name="id" required>
+    <input class="form-control" type="hidden" id="id" [(ngModel)]="todo.id" name="id">
   </div>
   <div>
-    <label for="body">Tên:</label>
+    <label for="body">Tên tác vụ:</label>
     <textarea class="form-control" id="title" [(ngModel)]="todo.title" name="title"></textarea>
   </div>
+  <br/>
   <div>
-    <label for="body">Mô tả:</label>
+    <label for="body">Nội dung:</label>
     <textarea class="form-control" id="body" [(ngModel)]="todo.body" name="body"></textarea>
   </div>
-  <button class="btn btn-primary" type="submit">Add Todo</button>
+  <br/>
+  <div>
+    <label for="time">Thời gian:</label>
+    <input class="form-control" type="datetime-local" id="time" [(ngModel)]="todo.time" name="time">
+  </div>
+  <br/>
+  <div>
+    <label for="status">Trạng thái:  </label>
+    <input class="form-check-input" type="checkbox" id="status" [(ngModel)]="todo.status" name="status">
+  </div>
+  <br/>
+  <button class="btn btn-primary" type="submit">Thêm</button>
 </form>
